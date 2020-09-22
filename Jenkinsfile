@@ -4,8 +4,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh '.mvn/wrapper/maven-wrapper.properties file'
-                archiveArtifacts artifacts: 'dist/trainSchedule.zip'
+                sh 'mvn clean'
+                sh 'mvn install'
+                sh 'mvn package'
+                
             }
         }
     }
