@@ -1,6 +1,4 @@
-pipeline {
-    agent any
-    stages {
+stages {
         stage('Build') {
             steps {
                 echo 'Running build automation'
@@ -26,7 +24,7 @@ pipeline {
                                 ], 
                                 transfers: [
                                     sshTransfer(
-                                        sourceFiles: 'dist/angular.zip',
+                                        sourceFiles: 'dist/trainSchedule.zip',
                                         removePrefix: 'dist/',
                                         remoteDirectory: '/tmp',
                                         execCommand: 'sudo /usr/bin/systemctl stop angular && rm -rf /opt/angular/* && unzip /tmp/angular.zip -d /opt/angular && sudo /usr/bin/systemctl start angular'
