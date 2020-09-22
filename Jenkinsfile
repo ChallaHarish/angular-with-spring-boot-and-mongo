@@ -4,7 +4,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh '.mvn/wrapper/maven-wrapper.jar' 
+                mvn clean
+                mvn install
+                mvn package
                 
                 
             }
