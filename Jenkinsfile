@@ -4,9 +4,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                mvn clean
-                mvn install
-                mvn package
+                sh 'mvn clean'
+                sh 'mvn install'
+                sh 'mvn package'
                 
                 
             }
