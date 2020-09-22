@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh 'pom.xml build '
+                sh 'maven-wrapper build '
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
