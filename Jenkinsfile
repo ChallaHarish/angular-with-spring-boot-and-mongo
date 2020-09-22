@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh 'mvn -N io.takari:maven:wrapper'
+                sh '.mvn/wrapper/maven-wrapper.properties file'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
