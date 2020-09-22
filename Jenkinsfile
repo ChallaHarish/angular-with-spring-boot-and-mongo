@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh '.mvn/ '
+                sh '.mvn/  build'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
